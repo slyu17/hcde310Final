@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Form</title>
+</head>
+<style>
+    body {
+        font-family:sans-serif;
+        background-color: lightgreen;
+        text-align: center;
+        font-size: 25px;
+    }
+    input[type="text"]{
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    input[type="submit"]{
+        width: 100px;
+        height:30px;
+    }
+</style>
+<body>
+<form action = "results" method="get">
+    <h2>Nutrients Search</h2>
+    <img src="https://www.heart.org/-/media/images/healthy-living/healthy-eating/superfoods.png" width="600">
+    <br/><br/>
+    <label for="food">Please enter a food name:</label>
+    <p></p>
+    <input type="text"id="food"name="food"/><br/><br/>
+    <input class="button" type="submit"value="Search"name="gobtn"/>
+</form>
+{% if prompt %}
+    <br/>
+    <div class= 'formtitle' style="color: red">{{prompt}}</div>
+{% endif %}
+</body>
+</html>

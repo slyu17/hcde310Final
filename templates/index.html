@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Nutrients</title>
+</head>
+<style>
+    body {
+        font-family:sans-serif;
+        background-color: lightgreen;
+    }
+    table, th, td {
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tr.user td{
+        font-weight: bold;
+    }
+    h2{
+        text-align: center;
+    }
+    p{
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h2>Nutrients in {{ name }}</h2>
+    {% for brand in nutrients %}
+        <table class = "table">
+            <tr class='user'>
+                <td class = 'text' colspan=2>{{ brand }}</td>
+            </tr>
+            <tr>
+                {% for items in nutrients[brand] %}
+                    <tr>
+                        <td>{{ items }}</td>
+                        <td class='count'>{{ nutrients[brand][items] }}</td>
+                    </tr>
+                {% endfor %}
+            </tr>
+        </table>
+        <br/>
+    {% endfor %}
+    <p><a href='/'>Search another food?</a></p>
+</body>
+</html>
